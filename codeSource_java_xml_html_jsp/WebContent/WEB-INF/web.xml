@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>TP5 FOOT</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ 
+ <!-- Servlet: LogIn -->
+ <servlet>
+	<servlet-name>LogInServlet</servlet-name>
+	<servlet-class>webServlet.LogInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>LogInServlet</servlet-name>
+	<url-pattern>/webServlet/LogInServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: rechercher -->
+  <servlet>
+	<servlet-name>RechercherServlet</servlet-name>
+	<servlet-class>webServlet.RechercherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>RechercherServlet</servlet-name>
+	<url-pattern>/webServlet/RechercherServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: modifierBD -->
+  <servlet>
+	<servlet-name>ModifierServlet</servlet-name>
+	<servlet-class>webServlet.ModifierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ModifierServlet</servlet-name>
+	<url-pattern>/webServlet/ModifierServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: affichier tous les infos -->
+  <servlet>
+	<servlet-name>AffichierTousServlet</servlet-name>
+	<servlet-class>webServlet.AffichierTousServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AffichierTousServlet</servlet-name>
+	<url-pattern>/webServlet/AffichierTousServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: Supprimer -->
+  <servlet>
+	<servlet-name>SupprimerServlet</servlet-name>
+	<servlet-class>webServlet.SupprimerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SupprimerServlet</servlet-name>
+	<url-pattern>/webServlet/SupprimerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: ajouter -->
+  <servlet>
+	<servlet-name>AjouterServlet</servlet-name>
+	<servlet-class>webServlet.AjouterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AjouterServlet</servlet-name>
+	<url-pattern>/webServlet/AjouterServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet: repondre A ajouter -->
+  <servlet>
+	<servlet-name>SelectServlet</servlet-name>
+	<servlet-class>webServlet.SelectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SelectServlet</servlet-name>
+	<url-pattern>/webServlet/SelectServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!--  filter: log in -->
+  <filter>
+	<filter-name>LogInFilter</filter-name>
+	<filter-class>webServlet.LogInFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>LogInFilter</filter-name>
+	<url-pattern>/reservedUtilisateur/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- filter: modifier BD  -->
+	<filter>
+	<filter-name>ModifierBDFilter</filter-name>
+	<filter-class>webServlet.ModifierBDFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>ModifierBDFilter</filter-name>
+	<url-pattern>/ajouterFiles/*</url-pattern>
+  </filter-mapping> 
+ 
+   
+</web-app>
